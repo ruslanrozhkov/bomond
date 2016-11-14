@@ -6,4 +6,10 @@ class Product < ActiveRecord::Base
       with: %r{\.(gif|jpg|png)\Z}i,
       message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
   }
+  validates_length_of :title, minimum: 10, massage: 'title length product must be minimum 10 symbol'
+
+  def self.latest
+    Product.order(:updated_at).last
+  end
+
 end
