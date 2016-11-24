@@ -23,7 +23,7 @@ Bomond::Application.configure do
       domain:   'domain.of.sender.net',
       authentication:          'plain',
       user_name:            'bladteam',
-      password:           'zakalibali',
+      password:           '',
       enable_starttls_auto: true
   }
 
