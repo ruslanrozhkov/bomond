@@ -1,0 +1,7 @@
+<h1>Wellcome</h1>
+
+<p>Now <%= Time.now %></p>
+
+<p>We have <%= pluralize(@total_orders, 'order') %></p>
+
+<%= link_to 'Logut', logout_path, method: :delete %>
