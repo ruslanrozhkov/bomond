@@ -22,8 +22,8 @@ Bomond::Application.configure do
       port:                        587,
       domain:   'domain.of.sender.net',
       authentication:          'plain',
-      user_name:            'bladteam',
-      password:           '',
+      user_name:            'user',
+      password:           'secret',
       enable_starttls_auto: true
   }
 
