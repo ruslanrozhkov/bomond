@@ -1,11 +1,11 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2><%=raw t('errors.template.header', count: @order.errors.count, model: t('activerecord.models.order')) %>.</h2>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%=raw msg %></li>
       <% end %>
       </ul>
     </div>
@@ -16,7 +16,7 @@
     <%= f.text_field :name, size: 40 %>
   </div>
   <div class="field">
-    <%= f.label :addres %><br>
+    <%= f.label :addres, t('.address_html') %><br>
     <%= f.text_area :addres, rows: 3, size: 40 %>
   </div>
   <div class="field">
@@ -25,13 +25,15 @@
   </div>
   <div class="field">
     <%= f.label :pay_type %><br>
-    <%= f.select :pay_type, PaymentType.names, prompt: 'Select a payment method' %>
+    <%= f.select :pay_type, PaymentType.names, prompt: t('.pay_prompt_html') %>
   </div>
+    <% unless session[:user_id].nil? %>
     <div class="field">
       <%= f.label :ship_date %>
       <%= f.date_select :ship_date %>
     </div>
+        <% end %>
   <div class="actions">
-    <%= f.submit 'Place Order' %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>
