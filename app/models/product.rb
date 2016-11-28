@@ -16,6 +16,12 @@ class Product < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
+  EURO_CURRENCY = 1.05744
+
+  def euro_currency(dollars)
+    dollars / EURO_CURRENCY
+  end
+
   private
 
   # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
