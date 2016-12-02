@@ -18,6 +18,7 @@
 
 # Ignore config files
 /config/environments/development.rb
+/config/database.yml
 
 /.idea/*
 
@@ -73,3 +74,6 @@ build-iPhoneSimulator/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 >>>>>>> efc681f1546b0def5e4591e82f8bd925fc76a455
+Будет удалено .idea/
+Будет удалено lib/capistrano/
+Будет удалено vendor/cache/
