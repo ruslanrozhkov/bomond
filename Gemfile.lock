@@ -148,7 +148,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
-  mysql2 (~> 0.3.18)
+  mysql2 (~> 0.3.20)
   puma
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
