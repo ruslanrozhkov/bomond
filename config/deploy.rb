@@ -12,6 +12,7 @@ set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
+set :bundle_gemfile,  "/home/blad/work/bomond/Gemfile"
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
@@ -58,13 +59,13 @@ namespace :deploy do
     end
   end
 
-  desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      before 'deploy:restart', 'puma:start'
-      invoke 'deploy'
-    end
-  end
+  #desc 'Initial Deploy'
+  #task :initial do
+   # on roles(:app) do
+    #  before 'deploy:restart', 'puma:start'
+     # invoke 'deploy'
+    #end
+  #end
 
   desc 'Restart application'
   task :restart do
@@ -74,7 +75,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after  :finishing,    :compile_assets
+  #after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
