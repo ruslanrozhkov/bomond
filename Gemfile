@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.18'
 end
 
 # Use SCSS for stylesheets
